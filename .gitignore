@@ -1,0 +1,17 @@
+.DS_Store
+.codex/
+.playwright-mcp/
+node_modules/
+dist/
+coverage/
+.env
+*.log
+*.tsbuildinfo
+backend/data/
+backend/*.sqlite
+backend/*.sqlite-shm
+backend/*.sqlite-wal
+frontend/.vite/
+frontend/vite.config.js
+frontend/vite.config.d.ts
+kuli-portal-*.png

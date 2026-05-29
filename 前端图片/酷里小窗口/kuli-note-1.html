@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>酷里小窗口 - 写小纸条</title>
+  <link rel="stylesheet" href="assets/kuli.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="酷里小窗口首页">
+        <span class="mark" aria-hidden="true"><img src="assets/kuli-logo-mark.png" alt=""></span>
+        <span class="brand-name"><strong>酷里 Kuli</strong><span>酷里小窗口</span></span>
+      </a>
+      <nav class="navlinks" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="services.html">能做什么</a>
+        <a href="note.html" aria-current="page">写小纸条</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button" href="#note-form">丢张小纸条给酷里看看</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell section">
+      <p class="eyebrow">写张小纸条</p>
+      <h1 class="mega">不用写得专业，先把卡住的地方<em>丢过来</em>。</h1>
+      <p class="lead">酷里会先判断能不能做、需不需要更多材料、是验收后付款还是先付定金。</p>
+    </section>
+
+    <section class="shell section two-col" id="note-form">
+      <aside class="panel window">
+        <div class="window-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span>tips.txt</span></div>
+        <div class="sticky-note">
+          <strong>可以这样写</strong>
+          “我想开通 Google Pro，但是不会弄。”<br>
+          “PDF 需要翻译，还要保持排版。”<br>
+          “我现在卡在这里。”然后直接配一张截图。
+        </div>
+        <div class="notice" style="margin-top: 26px;">
+          <strong>小贴士</strong>
+          <span>不用先写清楚方案。直接截图，加一句“我现在卡在这里”，会更容易判断。</span>
+        </div>
+      </aside>
+
+      <form class="panel form-panel" data-note-form>
+        <div class="field">
+          <label for="need-detail">1. 你想搞定什么？</label>
+          <textarea id="need-detail" maxlength="800" placeholder="例如：我想开通 GPT Pro，但是不会弄；我有一个 PDF 想翻译并保留格式；我想做一个小程序 / 网页 demo。"></textarea>
+          <small data-count-for="need-detail">0 / 800</small>
+        </div>
+
+        <div class="field">
+          <label>2. 大概属于哪一类？</label>
+          <div class="choice-row">
+            <label><input type="radio" name="kind" checked><span>GPT / AI 工具</span></label>
+            <label><input type="radio" name="kind"><span>Google / 账号</span></label>
+            <label><input type="radio" name="kind"><span>文档处理</span></label>
+            <label><input type="radio" name="kind"><span>小工具开发</span></label>
+            <label><input type="radio" name="kind"><span>部署配置</span></label>
+            <label><input type="radio" name="kind"><span>不知道怎么分</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>3. 什么时候需要？</label>
+          <div class="choice-row">
+            <label><input type="radio" name="time"><span>今天</span></label>
+            <label><input type="radio" name="time" checked><span>1–2 天</span></label>
+            <label><input type="radio" name="time"><span>3–5 天</span></label>
+            <label><input type="radio" name="time"><span>不急</span></label>
+            <label><input type="radio" name="time"><span>先聊聊</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>4. 预算大概多少？</label>
+          <div class="choice-row">
+            <label><input type="radio" name="budget"><span>50 元以内</span></label>
+            <label><input type="radio" name="budget" checked><span>50–100</span></label>
+            <label><input type="radio" name="budget"><span>100–300</span></label>
+            <label><input type="radio" name="budget"><span>300–1000</span></label>
+            <label><input type="radio" name="budget"><span>先报价看看</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="contact">5. 怎么联系你？</label>
+          <input id="contact" type="text" placeholder="微信 / QQ / 邮箱都可以">
+          <small>只用于沟通，不会对外公开。</small>
+        </div>
+
+        <div class="notice">
+          <strong>规则说明</strong>
+          <span>小活可以先做完再结；大一点的活可能要先付定金。默认不包长期售后，部署 / 维护 / 修改另算。</span>
+        </div>
+        <button class="button" style="width: 100%; min-height: 58px; margin-top: 18px;" type="submit" data-submit-button>丢张小纸条给酷里看看</button>
+        <div class="status-box" data-submit-status aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="shell mini-footer">酷里 Kuli · 收到纸条后，会先帮你判断是不是适合做。</footer>
+  <div class="mobile-cta"><a class="button" href="#note-form">丢张小纸条给酷里看看</a></div>
+  <script src="assets/kuli.js"></script>
+</body>
+</html>
