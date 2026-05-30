@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Kuli service window</title>
+  <desc id="desc">Open graph image for Kuli</desc>
+  <rect width="1200" height="630" fill="#101014"/>
+  <rect x="86" y="74" width="1028" height="482" rx="28" fill="#f7f4ee"/>
+  <rect x="86" y="74" width="1028" height="74" rx="28" fill="#202024"/>
+  <circle cx="132" cy="111" r="12" fill="#ff6b6b"/>
+  <circle cx="172" cy="111" r="12" fill="#ffd166"/>
+  <circle cx="212" cy="111" r="12" fill="#5bd68c"/>
+  <text x="256" y="120" fill="#f7f4ee" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">kuli.ask</text>
+  <text x="130" y="270" fill="#101014" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800">Kuli</text>
+  <text x="132" y="336" fill="#3a3344" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="600">AI tools, docs, tiny apps, deployment help.</text>
+  <text x="132" y="416" fill="#5f4bb6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Start from a note. Clarify. Deliver.</text>
+  <path d="M902 214c24-60 86-74 126-22 18 24 23 58 13 91 35 41 34 111-2 153-39 46-113 51-170 14-52 19-114 8-149-31-36-40-37-100-2-141-12-44 11-86 52-98 40-11 88 2 132 34Z" fill="#17171c"/>
+  <path d="M793 205l56 52-74 7Z" fill="#17171c"/>
+  <path d="M1029 199l-38 68 77-14Z" fill="#17171c"/>
+  <circle cx="847" cy="333" r="16" fill="#f7f4ee"/>
+  <circle cx="987" cy="333" r="16" fill="#f7f4ee"/>
+  <path d="M903 358c20 14 44 14 64 0" stroke="#f7f4ee" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M918 203l52 29 52-29 9 124c4 67-45 121-113 121s-117-54-113-121l9-124Z" fill="#f7f4ee" opacity=".12"/>
+</svg>

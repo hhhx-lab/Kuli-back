@@ -4,16 +4,28 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "backend",
-    "frontend"
+    "apps/web",
+    "packages/contracts"
   ],
   "scripts": {
-    "dev": "concurrently -n api,web -c cyan,green \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
-    "build": "npm run build --workspace backend && npm run build --workspace frontend",
-    "test": "npm run test --workspace backend",
-    "typecheck": "npm run typecheck --workspace backend && npm run typecheck --workspace frontend"
+    "dev": "concurrently -n api,web -c cyan,green \"PYTHONPATH=apps/api uv run --project apps/api uvicorn app.main:app --reload --reload-dir apps/api/app --reload-dir apps/api/alembic --host 0.0.0.0 --port 8000\" \"npm run dev --workspace @kuli/web\"",
+    "start:local": "bash scripts/start-local.sh",
+    "stop:local": "bash scripts/stop-local.sh",
+    "build": "npm run build --workspace @kuli/web",
+    "test": "npm run test:api",
+    "test:api": "PYTHONPATH=apps/api uv run --project apps/api pytest apps/api/tests",
+    "contracts:generate": "PYTHONPATH=apps/api uv run --project apps/api python scripts/generate_openapi_contract.py",
+    "contracts:check": "PYTHONPATH=apps/api uv run --project apps/api python scripts/generate_openapi_contract.py --check",
+    "typecheck": "npm run contracts:check && npm run typecheck --workspace @kuli/web && PYTHONPATH=apps/api uv run --project apps/api python -m compileall apps/api/app scripts",
+    "smoke:browser": "node scripts/browser_smoke.mjs",
+    "stack:up": "docker compose -p kuli-order-system up -d postgres redis",
+    "stack:down": "docker compose -p kuli-order-system down",
+    "verify:production-stack": "PYTHONPATH=apps/api uv run --project apps/api python scripts/verify_production_stack.py",
+    "db:migrate": "PYTHONPATH=apps/api uv run --project apps/api alembic -c apps/api/alembic.ini upgrade head",
+    "worker": "PYTHONPATH=apps/api uv run --project apps/api celery -A app.tasks.celery_app.celery_app worker --loglevel=INFO"
   },
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "playwright-core": "^1.60.0"
   }
 }
